@@ -14,7 +14,7 @@ evan-perry.github.io
 	10	Select bootcamp session
 	11	Select project
 
-#First web project, stop at 10. Portfolio project, stop after 5
+#First web project, stop after 10. Portfolio project, stop after 5
 
 #How to test work
 	1	go to terminal, type in => os test
