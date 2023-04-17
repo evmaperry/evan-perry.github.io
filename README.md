@@ -1,7 +1,7 @@
 # evan-perry.github.io
 evan-perry.github.io
 
-Install projects into workspace
+#Install projects into workspace
 	1	In terminal run => code ~/.bashrc
 	2	In .bachrc file, line 4, add => export CHE_PROJECTS_ROOT=/workspace
 	3	Exit .bashrc file
@@ -14,19 +14,19 @@ Install projects into workspace
 	10	Select bootcamp session
 	11	Select project
 
-First web project, stop at 10. Portfolio project, stop after 5
+#First web project, stop at 10. Portfolio project, stop after 5
 
-How to test work
+#How to test work
 	1	go to terminal, type in => os test
 	2	select bootcamp session
 	3	find project to be tested, and download/run test
 
-How to submit projects in gitpod
+#How to submit projects in gitpod
 	1	terminal => os submit
 	2	select bootcamp session
 	3	select project to submit
 
-how to push to github
+#How to push to github
 	1	terminal => git add -A a) this adds all updated files to be commited
 	2	terminal => git commit -m "message goes in here"
 	3	terminal => git push
