@@ -27,6 +27,6 @@ evan-perry.github.io
 	3	select project to submit
 
 # How to push to github
-	1	terminal => git add -A a) this adds all updated files to be commited
+	1	terminal => git add -A  (this adds all updated files to be commited)
 	2	terminal => git commit -m "message goes in here"
 	3	terminal => git push
