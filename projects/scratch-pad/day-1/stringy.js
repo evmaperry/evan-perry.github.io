@@ -180,19 +180,21 @@ function longest(stringOne, stringTwo) {
 
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    // declare conditional to check if first letter (ie, index 0) of stringOne is greater that
+    // declare conditional to check if first letter 
+    // (ie, index 0) of stringOne is greater than
     // first letter of stringTwo
     if (stringOne[0]>stringTwo[0]){
         return 1; // if so, return 1
       } 
-    // declare else-if to check if first letter of stringTwo is greater than
+    // declare else-if to check if first letter of 
+    // stringTwo is greater than
     // first letter of stringOne
-    if (stringTwo[0]>stringOne[0]){
+    else if (stringTwo[0]>stringOne[0]){
         return -1; // if so, return -1
       } 
     // declare else-if to check if letters at index 0 for both strings
     // are equal
-    if (stringOne[0] === stringTwo[0]){   
+    else if (stringOne[0] === stringTwo[0]){   
         return 0; // if so, return 0
       }
     // YOUR CODE ABOVE HERE //
