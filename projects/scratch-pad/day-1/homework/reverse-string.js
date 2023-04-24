@@ -21,10 +21,15 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    // declare storageString variable to eventually return
+    let storageString = "";
+    // declare for loop to iterate input.length number of times,
+    // but in reverse
+    for (let i = input.length-1; i >= 0; i--){
+        // concatenate letter at index-i to storageString
+        storageString += input[i];
+    }
+    return storageString; // return the storageString
     // YOUR CODE GOES ABOVE HERE //
 }
 
