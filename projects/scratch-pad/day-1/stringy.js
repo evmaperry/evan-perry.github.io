@@ -180,21 +180,18 @@ function longest(stringOne, stringTwo) {
 
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    // declare conditional to check if first letter 
-    // (ie, index 0) of stringOne is greater than
-    // first letter of stringTwo
-    if (stringOne[0]>stringTwo[0]){
-        return 1; // if so, return 1
-      } 
-    // declare else-if to check if first letter of 
-    // stringTwo is greater than
-    // first letter of stringOne
-    else if (stringTwo[0]>stringOne[0]){
+    // declare conditional to check if stringTwo is higher
+    // than stringOne
+    if (stringOne>stringTwo){
         return -1; // if so, return -1
       } 
-    // declare else-if to check if letters at index 0 for both strings
-    // are equal
-    else if (stringOne[0] === stringTwo[0]){   
+    // declare else-if to check stringTwo is higher than
+    // stringOne
+    else if (stringTwo>stringOne){
+        return 1; // if so, return 1
+      } 
+    // declare else-if to check if stringOne and stringTwo are "equal"
+    else if (stringOne === stringTwo){   
         return 0; // if so, return 0
       }
     // YOUR CODE ABOVE HERE //
@@ -210,18 +207,18 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    // declare conditional statement to check if first letter (ie, index 0)
-    // of stringOne is lower than first of stringTwo
-    if (stringOne[0] < stringTwo[0]){
-        return 1; // if so, return 1
-      }
-    // declare conditional statement to check if first letter of stringTwo
-    // is less than first letter of stringOne
-    else if (stringTwo[0]<stringOne[0]){
+    // declare conditional statement to check if stringOne
+    // stringOne is lower than first of stringTwo
+    if (stringOne < stringTwo){
         return -1; // if so, return -1
+      }
+    // declare conditional statement to check if stringTwo
+    // is "less than" stringOne
+    else if (stringTwo<stringOne){
+        return 1; // if so, return 1
       } 
-    // declare conditional statement to check for first letter equivalence
-    else if (stringTwo[0]===stringOne[0]){
+    // declare conditional statement to check for equivalence of stringOne and stringTwo
+    else if (stringTwo===stringOne){
         return 0; // if so, return 0
       } 
     // YOUR CODE ABOVE HERE //
