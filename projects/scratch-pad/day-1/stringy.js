@@ -14,9 +14,8 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    
-
-
+    // return length of string
+    return string.length;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -25,9 +24,8 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-
-
-
+    // use toLowerCase() string method to convert string input
+    return string.toLowerCase();
     // YOUR CODE ABOVE HERE //
 }
 
@@ -36,9 +34,8 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-
-
-
+    // use toUpperCase() string method to convert string
+    return string.toUpperCase();
     // YOUR CODE ABOVE HERE //
 }
 
@@ -57,9 +54,10 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
-
-
+    // declare regex pattern to represent a space
+    let regex = / /g;
+    // return input string updated to all lower and regex pattern replaced with hyphens
+    return string.toLowerCase().replace(regex, "-");
     // YOUR CODE ABOVE HERE //
 }
 
@@ -77,9 +75,13 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
-
+    // declare conditional to test if string's val at 0-index is char
+    // with both lowerCased
+    if (string[0].toLowerCase() === char.toLowerCase()){
+        return true;
+    } else {
+        return false;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -97,9 +99,13 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
-
+    // declare conditional to test if string's val at length-1 index is char
+    // with both lowerCased
+    if (string[string.length-1].toLowerCase() === char.toLowerCase()){
+        return true;
+    } else {
+        return false;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -110,9 +116,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
+    // return strings concatenated with + operator
+    return stringOne+stringTwo;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -128,9 +133,17 @@ function concat(stringOne, stringTwo) {
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // declare args array from function's arguments
     var args = Array.from(arguments);
-
-
+    // init returnString to store concatenated string from args
+    let returnString = "";
+    // declare for loop to iterate args.length times
+    for (let i = 0; i <= args.length; i++){
+        // concat string at index i of args to returnString
+        returnString += args[i];
+    }
+    // return returnString
+    return returnString;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -145,7 +158,14 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    // declare if statement to evaluate if stringOne is longer than stringTwo
+    if (stringOne.length > stringTwo.length){
+        // if so, return stringOne
+        return stringOne;
+        // if not, return stringTwo
+    } else {
+        return stringTwo;
+    }
 
 
     // YOUR CODE ABOVE HERE //
