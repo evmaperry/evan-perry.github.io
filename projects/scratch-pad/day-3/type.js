@@ -14,11 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    // declare conditional to check if value is array
-    if (Array.isArray(value)){
-        return true; // if so, return true
-    } else {return false;} // if not, return false
-    
+    // return if val is an array with isArray method
+    return Array.isArray(value);
     // YOUR CODE ABOVE HERE //
 }
 
@@ -32,14 +29,21 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    // convert value to a string to test for punctuation
-    let valueString = value.toString();
+    // initialize var that evaluatess true or false if value is any object
+    let isObject = value instanceof Object;
+    // init var that evals t/f if value is null
+    let isNull = (value === null);
+    // init var that evals t/f if value is an array
+    let isArray = (Array.isArray(value));
+    // init var that evals t/f if value is a date
+    let isDate = (value instanceof Date); 
 
-    if (valueString === '[object Object]') {
-        return true;
-    } else {
-        return false;
-    }
+    // declare if statement to evaluate that val is an object,
+    // but not null, not an array, and not a date
+    if (isObject && !isNull && !isArray && !isDate){
+        return true; // if so, return true
+    } else {return false;} // else return false
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -53,8 +57,7 @@ function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
     
-    
-    
+
     // YOUR CODE ABOVE HERE //
 }
 
