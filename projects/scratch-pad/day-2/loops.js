@@ -106,15 +106,14 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  // 
-  
-  
-  
+  // initialize arr variable as values of object with Object.keys() method
+  let arr1 = Object.values(object);
+  // create for loop to iterate arr.length times, but backwards
+  for (let i = arr1.length - 1; i >=0; i-- ) {
+    console.log(arr1[i]); // log value of arr at index i
+  }  
   // YOUR CODE ABOVE HERE //
 }
-
-
-
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
