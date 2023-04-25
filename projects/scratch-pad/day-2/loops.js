@@ -82,9 +82,6 @@ function printObjectValues(object) {
   for (let key in object){
     console.log(object[key]); // log object's key's value each iteration
   }
-  
-  
-  
   // YOUR CODE ABOVE HERE //
 }
 
@@ -93,10 +90,13 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // initialize count variable at zero to tally keys in object
+  let count = 0;
+  // declare for-in loop to iterate over keys of object
+  for (let key in object){
+    count++; // increment count by one every iteration
+  }
+  return count; // return count after keys are looped over
   // YOUR CODE ABOVE HERE //
 }
 
@@ -106,7 +106,7 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
+  // 
   
   
   
