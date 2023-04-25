@@ -35,9 +35,20 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // declare if statement to check if hour is between 0 and 11
+    if (hour >= 0 && hour < 12){
+        console.log("Good Morning!"); // if so, log 'Good Morning!' to console
+    }
+    // declare else-if statement to check if hour is between 12 and 16
+    else if (hour >= 12 && hour < 17){
+        console.log("Good Afternoon!"); // if so, log 'Good Afternoon!' to console
+    }
+    // declare else-if statement to check if hour is between 17 and 21
+    else if (hour >= 17 && hour < 22){
+        console.log("Good Evening!"); // if so, log 'Good Evening!' to console 
+    }
+    // declare else statement to print "Good Night" for all other numbers
+    else {console.log("Good Night!");}
     
     // YOUR CODE ABOVE HERE //
 }

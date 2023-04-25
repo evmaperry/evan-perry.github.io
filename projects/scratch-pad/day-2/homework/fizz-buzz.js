@@ -15,8 +15,8 @@ function fizzBuzz() {
     // declare for loop that iterates from 1 to 100
     for (let i = 1; i <= 100; i++){
         // declare conditional to check if i is divisible by 3 and 5
-        if (i%3===0 && i%5 === 0){
-            console.log("FizzBuzz"; // if so, log 'FizzBuzz' to console
+        if ( i%3 === 0 && i%5 === 0){
+            console.log("FizzBuzz"); // if so, log 'FizzBuzz' to console
         }
         // declare else if to check if i is divisible by 3
         else if (i%3===0){
