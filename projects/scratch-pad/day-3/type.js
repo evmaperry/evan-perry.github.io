@@ -14,9 +14,10 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // declare conditional to check if value is array
+    if (Array.isArray(value)){
+        return true; // if so, return true
+    } else {return false;} // if not, return false
     
     // YOUR CODE ABOVE HERE //
 }
@@ -31,10 +32,14 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    // convert value to a string to test for punctuation
+    let valueString = value.toString();
+
+    if (valueString === '[object Object]') {
+        return true;
+    } else {
+        return false;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
