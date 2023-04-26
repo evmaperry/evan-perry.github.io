@@ -114,14 +114,10 @@ function typeOf(value) {
         case (value === null):
           return "null";
           break;
-        
         case (value instanceof Date):
           return "date";
           break;
     }    
-    
-    
-    
     // YOUR CODE ABOVE HERE //
 }
 
