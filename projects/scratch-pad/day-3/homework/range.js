@@ -23,9 +23,21 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    let storageArray = [];
+  
+    if (start < end){
+      for (let i = start ; i <=end ; i++){
+        storageArray.push(i);
+      }
+    }
+
+    if (start > end){
+      for (let i = start ; i >= end ; i--){
+        storageArray.push(i);
+      }
+    }
     
-    
-    
+    return storageArray;
     
     // YOUR CODE GOES ABOVE HERE //
 }
