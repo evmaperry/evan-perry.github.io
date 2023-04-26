@@ -55,7 +55,14 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    let isObject = value instanceof Object;
+    let isNull = (value === null);
+    let isArray = (Array.isArray(value));
+    let isDate = (value instanceof Date); 
+
+   if ((isObject && !isNull && !isArray && !isDate) || isArray){
+    return true;
+   } else {return false;}
     
 
     // YOUR CODE ABOVE HERE //
@@ -82,7 +89,37 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+    switch (true) {
+        case typeof value === "string":
+          return "string";
+          break;
+        case Array.isArray(value):
+          return "array";
+          break;
+        case isObject(value):
+          return "object"
+          break;
+        case (typeof value === "undefined"):
+          return "undefined";
+          break;
+        case (typeof value === "number"):
+          return "number";
+          break;
+        case (typeof value === "boolean"):
+          return "boolean";
+          break;
+        case (value === null):
+          return "null";
+          break;
+        case (value instanceof Function):
+          return "function";
+          break;
+        case (value instanceof Date):
+          return "date";
+          break;
+        
+          
+      }    
     
     
     
