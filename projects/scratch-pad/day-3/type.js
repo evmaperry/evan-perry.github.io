@@ -55,14 +55,18 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
+    // declare isObject variable to evaluate if value is instance of any object
     let isObject = value instanceof Object;
+    // declare isNull variable to eval if value is null
     let isNull = (value === null);
+    // declare isArray variable to eval if value is Array
     let isArray = (Array.isArray(value));
+    // declare isDate variable to eval if value is instance of Date
     let isDate = (value instanceof Date); 
-
+    // declare conditional to eval if value is collection-type object OR array
    if ((isObject && !isNull && !isArray && !isDate) || isArray){
-    return true;
-   } else {return false;}
+    return true; // if so, return true
+   } else {return false;} // else return false
     
 
     // YOUR CODE ABOVE HERE //
@@ -89,34 +93,51 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    // declare switch statement to evaulate if case is true
     switch (true) {
+        // declare case to evaluate if value's typeof is 'string' 
         case typeof value === "string":
+          // if so, return "string"
           return "string";
-          break;
+          break; // then break out of switch
+        // declare case to eval if value isArray  
         case Array.isArray(value):
+          // if so, return 'array'
           return "array";
-          break;
+          break; // then break out of switch
+        // declare case to eval if value's type is function
         case (typeof value === "function"):
+          // if so, return 'function'
           return "function";
-          break;
+          break; // then break out of switch
+        // declare case to eval if value isObject from above
         case isObject(value):
+          // if so, return 'object'
           return "object"
-          break;
+          break; // then break out of switch
+        // declare case to eval if value's type is 'undefined'
         case (typeof value === "undefined"):
+          // if so, return 'undefined'
           return "undefined";
-          break;
+          break; // then break out of switch
+        // declare case to eval if value's type is 'number'
         case (typeof value === "number"):
+          // if so, return 'number'
           return "number";
-          break;
+          break; // then break out of switch
+        // declare case to eval if value's type is 'boolean'
         case (typeof value === "boolean"):
+          // if so, return 'boolean'
           return "boolean";
-          break;
+          break; // then break out
+        // declare case to eval if value is null
         case (value === null):
-          return "null";
-          break;
+          return "null"; // if so, return 'null'
+          break; // then break out of switch
+        // declare case to eval if value is instance of Date
         case (value instanceof Date):
-          return "date";
-          break;
+          return "date"; // if so, return 'date'
+          break; // then break out of switch statement
     }    
     // YOUR CODE ABOVE HERE //
 }
