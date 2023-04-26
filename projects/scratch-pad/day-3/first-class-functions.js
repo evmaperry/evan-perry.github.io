@@ -43,8 +43,11 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
+    // declare function in terms of 'str' parameter
     return function(str){
-        return (str[0] === startsWith);
+        // return boolean testing equivalence of str's 1's letter and startsWith character,
+        // both of which are lower cased for comparison
+        return (str[0].toLowerCase() === startsWith.toLowerCase());
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -56,8 +59,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+    // declare function in terms of 'str' parameter
     return function(str){
-        return (str[str.length-1] === endsWith);
+        // return boolean testing equivalence of str's last letter and endsWith character
+        // both of which are lower cased for comparison
+        return (str[str.length-1].toLowerCase() === endsWith.toLowerCase());
     }
     // YOUR CODE ABOVE HERE //
 }
