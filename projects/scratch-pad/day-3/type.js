@@ -96,6 +96,9 @@ function typeOf(value) {
         case Array.isArray(value):
           return "array";
           break;
+        case (typeof value === "function"):
+          return "function";
+          break;
         case isObject(value):
           return "object"
           break;
@@ -111,15 +114,11 @@ function typeOf(value) {
         case (value === null):
           return "null";
           break;
-        case (value instanceof Function):
-          return "function";
-          break;
+        
         case (value instanceof Date):
           return "date";
           break;
-        
-          
-      }    
+    }    
     
     
     
