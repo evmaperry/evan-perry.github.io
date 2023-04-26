@@ -13,7 +13,9 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    return function G(value){
+    // declare function in terms of parameter 'value'
+    return function(value){
+        // return boolean evaluating if value is larger than base
         return (value > base);
       } 
     // YOUR CODE ABOVE HERE //
@@ -26,7 +28,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    return function L(value){
+    // declare function in terms of parameter 'value'
+    return function(value){
+        // return boolean evaluating if value is less than base
         return (value < base);
       }
     // YOUR CODE ABOVE HERE //
@@ -39,8 +43,8 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    return function S(str){
-        return (str[0] == startsWith);
+    return function(String){
+        return (String[0] === startsWith);
     }
 
     // YOUR CODE ABOVE HERE //
@@ -53,7 +57,7 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    return function E(str){
+    return function(str){
         return (str[str.length-1] == endsWith);
     }
     // YOUR CODE ABOVE HERE //
@@ -68,10 +72,14 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    // initialize storageArray as empty array to hold modified strings
     let storageArray = [];
+    // declare for loop to iterate "length of strings array" times
     for (let i = 0 ; i <= strings.length -1 ; i++){
+        // push the updated value of strings array at i to storageArray
         storageArray.push(modify(strings[i]));
     }
+    // return populated storageArray
     return storageArray;
     // YOUR CODE ABOVE HERE //
 }
@@ -87,12 +95,16 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    // declare for loop to iterate "length of strings array" times
     for (let i = 0 ; i <= strings.length -1 ; i++){
+        // declare if statement to evaluate if test of value
+        // of strings array at index i is false
         if (test(strings[i]) === false){
-            return false;
+            return false; // if any of the tests fails, return false
         }
     }
-    return true;
+    // if all of the tests don't fail (which would return false above), then return true
+    return true; 
     // YOUR CODE ABOVE HERE //
 }
 
