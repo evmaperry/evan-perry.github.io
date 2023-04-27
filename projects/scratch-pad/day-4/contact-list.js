@@ -78,11 +78,20 @@ function makeContactList() {
         },
         printAllContactNames(){
             let returnString = ""; // declare returnString to store names
+
+            for ( let i = 0 ; i <= contacts.length - 2 ; i++){ // declare for loop to iterate over contacts array, but not the last one
+                returnString += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n"; // add concatenated string of "firstName lastName\n" to returnString 
+                }
+
+            for ( let i = contacts.length - 1 ; i <= contacts.length -1 ; i++){ // declare for loop to iterate over last object in contacts array (start and end are the same)
+                returnString += contacts[i].nameFirst + " " + contacts[i].nameLast; // add concatenated string of "firstName lastName" to returnString
+            }
             
+            return returnString; // return the returnString
 
 
 
-            
+
         }
     }
 }
