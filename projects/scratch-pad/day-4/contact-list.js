@@ -35,7 +35,13 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    let contact = {};
 
+    contact.id = id;
+    contact.nameFirst = nameFirst;
+    contact.nameLast = nameLast;
+
+    return contact;
 } 
 
 
@@ -43,12 +49,24 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        add: function(contact){
+
+        },
+        findContact: function(fullName){
+
+        },
+        removeContact: function(contact){
+
+        },
+        printAllContactNames(){
+            //return string of all full-names with line break
         }
     }
 }
