@@ -34,14 +34,14 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
-    let contact = {};
+function makeContact(id, nameFirst, nameLast) { // declace makeContact function with id, nameFirst, nameLast params)
+    let contact = {}; // declare contact object to store created properties
 
-    contact.id = id;
-    contact.nameFirst = nameFirst;
-    contact.nameLast = nameLast;
+    contact.id = id; // initialize id property and assign to id argument
+    contact.nameFirst = nameFirst; // initialize nameFirst property and assign to nameFirst argument
+    contact.nameLast = nameLast; // initialize nameLast property and assign to nameLast argument
 
-    return contact;
+    return contact; // return updated contact
 } 
 
 
@@ -56,17 +56,33 @@ function makeContactList() {
         length: function() {
             return contacts.length;
         },
-        add: function(contact){
-
+        addContact: function(contact){ // declare addContact method as function of contact parameter
+            return contacts.push(contact); // return the contacts array with contact pushed in
         },
-        findContact: function(fullName){
-
+        findContact: function(fullName){ // declare findContact method as function of fullName
+            for (let i = 0 ; i <= contacts.length - 1 ; i++ ){ // declare for loop to iterate over contacts array
+                // declare conditional to check if fullName arg equals concatenated string of contacts array's object's nameFirst, space, nameLast at contacts[i]
+                if (fullName === contacts[i].nameFirst + " " + contacts[i].nameLast){  
+                    // if so, return the object from contacts at index i
+                    return contacts[i];
+                }
+            }            
         },
         removeContact: function(contact){
+            for (let i = 0 ; i <= contacts.length -1 ; i++ ){ // declare for loop to iterate over contacts array
+                if (contacts[i].id === contact.id){ // declare conditional to test if id of contact at contacts[i] equals id of contact argument
+                    return contacts.splice(i, 1); // if so, return the contacts array with the object at index i removed
+                }
+            }
 
         },
         printAllContactNames(){
-            //return string of all full-names with line break
+            let returnString = ""; // declare returnString to store names
+            
+
+
+
+            
         }
     }
 }
