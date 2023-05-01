@@ -21,9 +21,9 @@ console.log(animal); // console log animal to confirm
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var noises = []; // declare noises 
-noises[0] = "Bark!"; 
-noises.splice(noises.length, 0, "Roar!");
+var noises = []; // initialize noises as empty array
+noises[0] = "Bark!";  // assign first noises element as Bark!
+noises.splice(noises.length, 0, "Roar!"); // assign second noises element as Roar!
 noises.unshift("Slurp!");
 noises[noises.length] = "Gulp!";
 console.log(noises);
@@ -57,13 +57,29 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+var animals = [];
+animals.push(animal);
+var duck = { species: 'duck', name: 'Jerome', noises: ['Quack!', 'Honk!', 'Sneeze!', 'Woosh!'] };
+animals.push(duck);
+var dolphin = { species: 'dolphin', name: 'Bill', noises: ['Click!', 'Squeal!', 'Splash!', 'Kee-kee-kee!'] }
+var parrot = {species: 'parrot', name: 'Steve', noises: ['Hello!', 'Goodbye!', 'Squawk!', 'Flap!'] };
+animals.push(dolphin); 
+animals.push(parrot);
 
+console.log(animals);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// Initialize an array to store list of friends. The friends array
+// constitutes on ordered list, and we want the functionality of an array
+// and its methods to manipulate the data
 
+var friends = [];
+function getRandom(animals){
+  return Math.floor(Math.random() * animals.length);
+}
 
 
 /**
