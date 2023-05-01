@@ -11,24 +11,29 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animal = {};
-animal.species = 'crocodile';
-animal["name"] = 'Ronny';
-animal.noises = [];
-console.log(animal);
+var animal = {}; // declare animal variable
+animal.species = 'crocodile'; // assign animal's species property to crocodile
+animal["name"] = 'Ronny'; // assign animal's name to Ronny
+animal.noises = []; // declare animal's noises property to empty array
+console.log(animal); // console log animal to confirm
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var noises = []; // declare noises 
+noises[0] = "Bark!"; 
+noises.splice(noises.length, 0, "Roar!");
+noises.unshift("Slurp!");
+noises[noises.length] = "Gulp!";
+console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+animal.noises = noises;
+noises.push("Ouch!");
+console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
