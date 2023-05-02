@@ -67,7 +67,23 @@ function remove(animals, name){
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// declare add function in terms of animals, animal parameters
+function add(animals, animal){
+    // declare hasName variable to evaluate if animal's name property is greater that zero
+    let hasName = (animal.name.length > 0);
+    // declare hasSpecies variable to evaluate if animal's species property is greater than zero
+    let hasSpecies = (animal.species.length > 0);
+    // declare hasUniqueName variable to evaluate if animal arg's name does not appear in animals,
+    // using the predefined search function
+    let hasUniqueName = (search(animals, animal.name) === null);
 
+    // declare conditional to evaluate if hasName, hasSpecies, and hasUniqueName are all true
+    if (hasName && hasSpecies && hasUniqueName){
+        // if so, push animal into animals array
+        animals.push(animal);
+    }
+    
+}
 
 /**
  * You did it! You're all done with Matchy!
