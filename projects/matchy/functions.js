@@ -35,7 +35,7 @@ function search(animals, name){
 // declare replace function in terms of animals, name and replacement parameters
 function replace(animals, name, replacement){
     // declare for loop to iterate over elements in animals array
-    for (let i = 0 ; i<=animals.length-1 ; i++){
+    for (let i = 0 ; i <= animals.length-1 ; i++){
         // declare conditional to evaluate if the name of the animal is in animals
         if (animals[i].name === name){
             // if so, reassign that animal object to the replacement object
@@ -49,6 +49,18 @@ function replace(animals, name, replacement){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// declare remove function in terms of animals, name parameters
+function remove(animals, name){
+    // declare for loop to iterate over elements in animals array
+    for (let i = 0 ; i <= animals.length - 1 ; i++){
+        // declare conditional to evaluate if name of animal at i === name argument
+        if (animals[i].name === name){
+            // if so, use splice method on animals array to delete one item at the
+            // index
+            animals.splice(animals[i], 1);
+        }
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////
