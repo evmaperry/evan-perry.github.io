@@ -11,7 +11,7 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animal = {}; // declare animal variable
+var animal = {}; // declare animal variable 
 animal.species = 'crocodile'; // assign animal's species property to crocodile
 animal["name"] = 'Ronny'; // assign animal's name to Ronny
 animal.noises = []; // declare animal's noises property to empty array
