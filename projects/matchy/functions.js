@@ -13,13 +13,20 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// declare function named search in terms of animalsArr and animalName
 function search(animalsArr, animalName){
-    for (var i = 0; i <= animalsArr.length - 1; i++){
+    // declare for loop to iterate over elements in animalsArray
+    for (let i = 0; i <= animalsArr.length - 1; i++){
+        // declare conditional to evaluate if the name of the animal 
+        // at index i === provided animal name arg
         if (animalsArr[i].name === animalName){
+            // if so, return the animal object at the index
             return (animalsArr[i]);
-        } else {return null;}
-    }
-}
+          }  
+      }
+      // if no names in animalsArr match animalName arg, return null
+      return null;
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
