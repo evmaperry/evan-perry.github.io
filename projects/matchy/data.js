@@ -72,15 +72,20 @@ console.log(animals);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
 // Initialize an array to store list of friends. The friends array
 // constitutes on ordered list, and we want the functionality of an array
 // and its methods to manipulate the data
-
 var friends = [];
+
 function getRandom(animals){
-  return Math.floor(Math.random() * animals.length);
+  return Math.floor(Math.random() * (animals.length));
 }
 
+friends.push(animals[getRandom(animals)].name);
+console.log(friends);
+animals[0].friends = friends;
+console.log(animals[0]);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
