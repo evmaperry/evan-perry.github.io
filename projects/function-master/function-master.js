@@ -2,8 +2,13 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function objectValues(object) {
+function objectValues(object) { // declare objectValues function in terms of object parameter
+    let storageArr = []; // assign storageArr as empty array to push into
 
+    for (let key in object){ 
+        storageArr.push(object[key]);
+    }
+    return storageArr;
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,7 +16,13 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    let storageArr = [];
 
+    for (let key in object){
+        storageArr.push(key);
+    }
+
+    return storageArr.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,7 +30,14 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    let storageArr = [];
+
+    for (let key in object){
+      if (typeof object[key] === "string")
+        storageArr.push(object[key]);
+      }
+
+    return storageArr.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +45,11 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)){
+        return 'array';
+    } else if (collection instanceof Object){
+        return 'object';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
