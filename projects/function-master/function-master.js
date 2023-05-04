@@ -165,9 +165,12 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-    for (let key in object){
-        
+    for (let key2 in object){
+        if (object[key2] === key){
+            object[key] = value;
+        } else { object[key] = value;}
     }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
