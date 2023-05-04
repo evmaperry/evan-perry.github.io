@@ -33,6 +33,7 @@ function fizzBuzz() {
 function drawChessboard(sideLength) { // declare drawChessboard function in terms of sideLength
   let printString = ""; // 
 
+  
 
   for (let i = 0 ; i <= num ; i++){
     console.log(printString);
