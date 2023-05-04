@@ -148,15 +148,28 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    // let namesInData = []; // declare namesInData array to store all names in array (called 'data' in tests)
-    // for (let i = 0 ; i <= array.length -1 ; i++){ // declare for loop to iterate over array 
-    //     namesInData.push(array[i].name); // each iteration, push array element's name to namesInData array
-    // }
+    let allNames = [];
+  for ( let i = 0 ; i <= array.length - 1 ; i++){
+    allNames.push(array[i].name);
+  }
+  
+  let friendsAndSelf = [];
+  for (let i = 0 ; i <= array.length - 1 ; i++){
+    if (array[i].name === name){
+      friendsAndSelf = array[i].friends;
+    }
+  }
+  friendsAndSelf.push(name);
+  
+  for (let j = 0 ; j <= friendsAndSelf.length - 1 ; j++){
+    for (let k = 0 ; k <= allNames.length - 1 ; k++){
+      if ( friendsAndSelf[j] === allNames[k] ){
+        allNames.splice(allNames.indexOf(allNames[k]), 1);
+      }
+    }
+  }
 
-    // let notFriendsArr = []; // declare notFriendsArr to store names
-    // for (let i = 0 ; i <= namesInData.length - 1 ; i++){ // declare for loop to iterate over namesInData array
-    //     if (namesInData[i] !== name && name !== 
-    // }
+  return allNames;
 
 }
 
