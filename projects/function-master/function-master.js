@@ -148,15 +148,15 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    let namesInData = []; // declare namesInData array to store all names in array (called 'data' in tests)
-    for (let i = 0 ; i <= array.length -1 ; i++){ // declare for loop to iterate over array 
-        namesInData.push(array[i].name); // each iteration, push array element's name to namesInData array
-    }
+    // let namesInData = []; // declare namesInData array to store all names in array (called 'data' in tests)
+    // for (let i = 0 ; i <= array.length -1 ; i++){ // declare for loop to iterate over array 
+    //     namesInData.push(array[i].name); // each iteration, push array element's name to namesInData array
+    // }
 
-    let notFriendsArr = []; // declare notFriendsArr to store names
-    for (let i = 0 ; i <= namesInData.length - 1 ; i++){ // declare for loop to iterate over namesInData array
-
-    }
+    // let notFriendsArr = []; // declare notFriendsArr to store names
+    // for (let i = 0 ; i <= namesInData.length - 1 ; i++){ // declare for loop to iterate over namesInData array
+    //     if (namesInData[i] !== name && name !== 
+    // }
 
 }
 
@@ -165,7 +165,9 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    for (let key in object){
+        
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -173,7 +175,14 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    for ( let i = 0 ; i <= array.length -1 ; i++){
+        for ( let key in object ){
+            if (array[i] === key){
+                delete object[key];
+            }
+        }
+    }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -181,7 +190,15 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+    // let storageArr = [];
 
+    // for ( i = 0 ; i <= array.length-1 ; i++){
+    //     for ( j = 0 ; j <= storageArr.length -1 ; j++ ){
+    //         if (array[i] !== storageArr[j]){
+                
+    //         }
+    //     }
+    // }
 }
 
 //////////////////////////////////////////////////////////////////////
