@@ -5,21 +5,21 @@
 function objectValues(object) { // declare objectValues function in terms of object parameter
     let storageArr = []; // assign storageArr as empty array to push into
 
-    for (let key in object){ 
-        storageArr.push(object[key]);
+    for (let key in object){ // declare for loop to iterate over object keys
+        storageArr.push(object[key]); // push value of object at key to storageArr
     }
-    return storageArr;
+    return storageArr; // return storageArr
 } 
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function keysToString(object) {
-    let storageArr = [];
+function keysToString(object) { // declare keysToString function in terms of object parameter
+    let storageArr = []; // declare storageArr to store keys' values of object
 
-    for (let key in object){
-        storageArr.push(key);
+    for (let key in object){ // declare for loop to iterate ver object
+        storageArr.push(key); 
     }
 
     return storageArr.join(" ");
@@ -91,7 +91,7 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-    
+    return capitalizeWord(object.name) + " is a " + capitalizeWord(object.species);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -99,7 +99,14 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+    let printArray = [];
+    if (Array.isArray(object.noises) && object.noises.length > 0){
+        for (let i = 0 ; i <= object.noises.length -1 ; i++){
+            printArray.push(object.noises[i])
+        }
+    } else {return "there are no noises"}
+    
+    return printArray.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -107,7 +114,9 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+    if (string.includes(word)){
+        return true;
+    } else { return false; }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -115,7 +124,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+    object.friends.push(name);
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -123,7 +133,14 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if(Array.isArray(object.friends)){
+        for (let i = 0 ; i <= object.friends.length -1 ; i++){
+            if(object.friends[i] === name){
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -131,6 +148,15 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    let namesInData = []; // declare namesInData array to store all names in array (called 'data' in tests)
+    for (let i = 0 ; i <= array.length -1 ; i++){ // declare for loop to iterate over array 
+        namesInData.push(array[i].name); // each iteration, push array element's name to namesInData array
+    }
+
+    let notFriendsArr = []; // declare notFriendsArr to store names
+    for (let i = 0 ; i <= namesInData.length - 1 ; i++){ // declare for loop to iterate over namesInData array
+
+    }
 
 }
 
