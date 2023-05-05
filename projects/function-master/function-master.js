@@ -202,11 +202,12 @@ function nonFriends(name, array) { // declare nonFriends function in terms of na
 
 function updateObject(object, key, value) { // declare updateObject function in terms of object, key, value parameters
     for (let key2 in object){ // declare for loop-in loop to iterate over object keys (called key2 to avoid ambiguity with key parameter)
-        if (object[key2] === key){ // each iteration, declare conditional to evaluate if object's key equals key 
-            object[key] = value;
-        } else { object[key] = value;}
+        if (key2 === key){ // each iteration, declare conditional to evaluate if object's key equals key argument 
+            object[key2] = value; // if so, reassign object's existing key to value (could also use object[key], as key === key2)
+        // declare else condition to declare new property object[key] to value in case property of object[key] doesn't exist
+        } else { object[key] = value;} 
     }
-    return object;
+    return object; // return updated object
 }
 
 //////////////////////////////////////////////////////////////////////
