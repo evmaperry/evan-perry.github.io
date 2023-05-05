@@ -155,30 +155,43 @@ function isFriend(name, object) { // declare isFriend function in terms of name,
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// could have used array.includes() to simplify.
+// Overall, the idea is to find the difference between all the names in the 
+// array and the friends of the object (denoted by name argument) in the array parameter.
+// This leaves us with the people who aren't in the object's friends array.
+// Could have used array.includes() to simplify greatly.
 
 function nonFriends(name, array) { // declare nonFriends function in terms of name, array parameters
-    let allNames = []; // declare allName
-  for ( let i = 0 ; i <= array.length - 1 ; i++){ // 
-    allNames.push(array[i].name);
+    let allNames = []; // declare allNames variable as empty array
+  for ( let i = 0 ; i <= array.length - 1 ; i++){ // declare for loop to iterate over array arg
+    allNames.push(array[i].name); // each iteration, push the name property value of element in array at index i
   }
   
-  let friendsAndSelf = [];
-  for (let i = 0 ; i <= array.length - 1 ; i++){
-    if (array[i].name === name){
-      friendsAndSelf = array[i].friends;
+  let friendsAndSelf = []; // declare friendsAndSelf variable, assign to empty array
+  for (let i = 0 ; i <= array.length - 1 ; i++){ // declare for loop to iterate over array argument
+    // each iteration, declare conditional to evaluate if the name argument equals the name property value of
+    // the element at index i. This selects the correct object from array.
+    if (array[i].name === name){ 
+      // if so, reassign friendsAndSelf variable to the friends array of the object in array at index i
+      friendsAndSelf = array[i].friends; 
     }
   }
-  friendsAndSelf.push(name);
+  // then push the name arg into friendsAndSelf. After this, we can 
+  // find the difference between allNames and friendsAndSelf
+  friendsAndSelf.push(name); 
   
+  // declare for loop to iterate over friendsAndSelf array
   for (let j = 0 ; j <= friendsAndSelf.length - 1 ; j++){
+    // declare for loop to iterate over allNames array
     for (let k = 0 ; k <= allNames.length - 1 ; k++){
+      // declare conditional to evaluate if element in friendsAndSelf at index i
+      // equals element in allNames at index k. This is the same as saying:
+      // does each name in friendsAndSelf equal some name in allNames
       if ( friendsAndSelf[j] === allNames[k] ){
-        allNames.splice(allNames.indexOf(allNames[k]), 1);
+        allNames.splice(allNames.indexOf(allNames[k]), 1); // if so, remove that name from allNames with splice
       }
     }
   }
-
+  // return updated allNames array, which will have matching names removed, leaving non-friends (and non-self)
   return allNames;
 
 }
