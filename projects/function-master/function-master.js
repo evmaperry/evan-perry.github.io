@@ -155,9 +155,9 @@ function isFriend(name, object) { // declare isFriend function in terms of name,
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// Overall, the idea is to find the difference between all the names in the 
-// array and the friends of the object (denoted by name argument) in the array parameter.
-// This leaves us with the people who aren't in the object's friends array.
+// The idea here is to find the difference between all the names in the 
+// array and the friends of the object in question (which is denoted by name argument) in the array argument.
+// This leaves us with the people who aren't in the object's friends array nor the object denoted by name arg.
 // Could have used array.includes() to simplify greatly.
 
 function nonFriends(name, array) { // declare nonFriends function in terms of name, array parameters
@@ -191,7 +191,7 @@ function nonFriends(name, array) { // declare nonFriends function in terms of na
       }
     }
   }
-  // return updated allNames array, which will have matching names removed, leaving non-friends (and non-self)
+  // return updated allNames array, which will have matching names removed, leaving non-friends and non-self
   return allNames;
 
 }
@@ -200,12 +200,15 @@ function nonFriends(name, array) { // declare nonFriends function in terms of na
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// i think a lot of this logic is unnecessary, but oh well, too late. Could just loop thru keys 
+// of object and assign object[key] to value (ie, execute the else statement below). *** Update: yup. ***
+
 function updateObject(object, key, value) { // declare updateObject function in terms of object, key, value parameters
     for (let key2 in object){ // declare for loop-in loop to iterate over object keys (called key2 to avoid ambiguity with key parameter)
-        if (key2 === key){ // each iteration, declare conditional to evaluate if object's key equals key argument 
+        /* if (key2 === key){ // each iteration, declare conditional to evaluate if object's key equals key argument 
             object[key2] = value; // if so, reassign object's existing key to value (could also use object[key], as key === key2)
-        // declare else condition to declare new property object[key] to value in case property of object[key] doesn't exist
-        } else { object[key] = value;} 
+        // declare else condition to declare new property object[key] and assign to value in case property of object[key] doesn't exist
+        } else */{ object[key] = value;} 
     }
     return object; // return updated object
 }
@@ -214,30 +217,36 @@ function updateObject(object, key, value) { // declare updateObject function in 
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function removeProperties(object, array) {
-    for ( let i = 0 ; i <= array.length -1 ; i++){
-        for ( let key in object ){
-            if (array[i] === key){
-                delete object[key];
+
+function removeProperties(object, array) { // declare removeProperties function in terms of object, array parameters
+    for ( let i = 0 ; i <= array.length -1 ; i++){ // declare for loop to iterate over array
+        for ( let key in object ){ // declare for-in loop to iterate over keys of objects
+            // declare conditional to evaluate if element in array at index i equals the key of object,
+            // ie, does the element in array at index i equal some key in object
+            if (array[i] === key){  
+                delete object[key]; // if so, delete that key of the object
             }
         }
     }
-    return object;
+    return object; // return updated object after appropriate delete statements execute
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function dedup(array) {
-    let storageArray = [];
+// i think to do this without includes() you have to perform both a loop and a nested loop over the array in question
 
-    for ( i = 0 ; i <= array.length -1 ; i ++){
-    if (!storageArray.includes(array[i])){
-      storageArray.push(array[i]);
+function dedup(array) { // declare dedup function in terms of array 
+    let storageArray = []; // declare storageArray to store unique elements 
+
+    for ( i = 0 ; i <= array.length -1 ; i ++){ // declare for loop to iterate over array arguments
+        // declare conditional to evaluate if the storage array DOESN'T include the element of array at index i
+        if (!storageArray.includes(array[i])){  
+            storageArray.push(array[i]); // if so (ie, if NOT), push the element from array at index i into storageArray
+        }
     }
-  }
-    return storageArray;
+    return storageArray; // return the storageArray
 }
 
 //////////////////////////////////////////////////////////////////////
