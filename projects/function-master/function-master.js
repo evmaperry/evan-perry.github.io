@@ -84,7 +84,9 @@ function capitalizeAllWords(string) { // declare capitalizeAllWords function in 
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) { // declare welcomeMessage function in terms of object parameter
-    let capitalizedName = capitalizeWord(object.name); // declare capitalizedName variable, assign it to object's name, capitalized
+
+    // declare capitalizedName variable, assign it to object's name, capitalized
+    let capitalizedName = capitalizeWord(object.name); 
     return "Welcome " + capitalizedName + "!"; // return string concatenated from strings, capitalizedName
 }
 
@@ -101,58 +103,63 @@ function profileInfo(object) { // declare profileInfo function in terms of objec
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function maybeNoises(object) {
-    let printArray = [];
-    if (Array.isArray(object.noises) && object.noises.length > 0){
-        for (let i = 0 ; i <= object.noises.length -1 ; i++){
-            printArray.push(object.noises[i])
-        }
-    } else {return "there are no noises"}
+function maybeNoises(object) { // declare maybeNoises function in terms of object parameter
+    let printArray = []; // declare printArray to store object's noises
     
-    return printArray.join(" ");
+    // declare conditional to evaluate if object's noises property's value is an array with elements in it
+    if (Array.isArray(object.noises) && object.noises.length > 0){
+        for (let i = 0 ; i <= object.noises.length -1 ; i++){ // declare for loop to iterate over object's noises array
+            printArray.push(object.noises[i]) // each iteration, push noises element at index i into printArray
+        }
+        // declare else statement to return string in case object's noises property is either not an array or an empty array
+    } else {return "there are no noises"} 
+    
+    return printArray.join(" "); // return space-separated string joined from printArray's elements
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function hasWord(string, word) {
-    if (string.includes(word)){
-        return true;
-    } else { return false; }
+function hasWord(string, word) { // declare hasWord function in terms of stirng, word parameters
+    if (string.includes(word)){ // declare conditional to evaluate if string argument includes word argument 
+        return true; // if so, return true
+    } else { return false; } // if not, return false
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function addFriend (name, object) {
-    object.friends.push(name);
-    return object;
+function addFriend (name, object) { // declare addFriend function in terms of name, object parameters
+    object.friends.push(name); // push name argument into object's friends array
+    return object; // return the updated object
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function isFriend(name, object) {
-    if(Array.isArray(object.friends)){
-        for (let i = 0 ; i <= object.friends.length -1 ; i++){
-            if(object.friends[i] === name){
-                return true;
+function isFriend(name, object) { // declare isFriend function in terms of name, object parameters
+    if(Array.isArray(object.friends)){ // declare conditional to evaluate if object's friends property is an array
+        for (let i = 0 ; i <= object.friends.length -1 ; i++){ // if so, declare for loop to iterate over object's friends array
+            if(object.friends[i] === name){ // each iteration, declare conditional to evaluate if element of object's friends array equals name arg 
+                return true; // if so, return true
             }
         }
     }
-    return false;
+    return false; // return false (this executes if name arg does not match any elements in object's friends array)
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
-    let allNames = [];
-  for ( let i = 0 ; i <= array.length - 1 ; i++){
+// could have used array.includes() to simplify.
+
+function nonFriends(name, array) { // declare nonFriends function in terms of name, array parameters
+    let allNames = []; // declare allName
+  for ( let i = 0 ; i <= array.length - 1 ; i++){ // 
     allNames.push(array[i].name);
   }
   
