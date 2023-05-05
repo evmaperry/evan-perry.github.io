@@ -200,9 +200,9 @@ function nonFriends(name, array) { // declare nonFriends function in terms of na
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function updateObject(object, key, value) {
-    for (let key2 in object){
-        if (object[key2] === key){
+function updateObject(object, key, value) { // declare updateObject function in terms of object, key, value parameters
+    for (let key2 in object){ // declare for loop-in loop to iterate over object keys (called key2 to avoid ambiguity with key parameter)
+        if (object[key2] === key){ // each iteration, declare conditional to evaluate if object's key equals key 
             object[key] = value;
         } else { object[key] = value;}
     }
