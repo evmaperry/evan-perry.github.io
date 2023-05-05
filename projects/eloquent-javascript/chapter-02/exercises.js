@@ -22,7 +22,7 @@ function fizzBuzz() {
       console.log("fizz"); // if so, log 'fizz'
     } else if (i % 5 === 0){ // declare else-if to evaluate if i is divisible by 5
       console.log("buzz"); // if so, log 'buzz'
-    } else {console.log(i);} // else log i
+    } else {console.log(i);} // else log index
   }
 }
 
@@ -31,14 +31,23 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(sideLength) { // declare drawChessboard function in terms of sideLength
-  let printString = ""; // 
+  let storageArray = []; // declare storageArray as empty array
 
-  
-
-  for (let i = 0 ; i <= num ; i++){
-    console.log(printString);
+  for (let i = 0 ; i < sideLength ; i++){ // declare for loop to iterate sideLength times (each iteration represents a row)
+    
+    let storageString = ""; // declare storageString to store characters
+    
+    for ( let j = 0 ; j < sideLength ; j++){ // declare nested for loop to iterate sideLength times (one square)
+      
+      if ((i+j) % 2 === 0 ){ // declare conditional to evaluate if sum of row and column indices are even
+        storageString += " "; // if so, concatenate # to storageString
+      } else { // else if not even (i.e. odd)...
+        storageString += "#"; // ...then concatenate " " to storageString
+      }
+    } 
+    storageArray.push(storageString+"\n"); // push storageString into storageArray
   }
-
+  console.log(storageArray.join("")); // return string of unseparated, joined storageArray with newline concatenated at end
 }
 
 ////////////////////////////////////////////////////////////////////////////////
