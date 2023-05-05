@@ -206,15 +206,14 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-    // let storageArr = [];
+    let storageArray = [];
 
-    // for ( i = 0 ; i <= array.length-1 ; i++){
-    //     for ( j = 0 ; j <= storageArr.length -1 ; j++ ){
-    //         if (array[i] !== storageArr[j]){
-                
-    //         }
-    //     }
-    // }
+    for ( i = 0 ; i <= array.length -1 ; i ++){
+    if (!storageArray.includes(array[i])){
+      storageArray.push(array[i]);
+    }
+  }
+    return storageArray;
 }
 
 //////////////////////////////////////////////////////////////////////
