@@ -16,39 +16,39 @@ function objectValues(object) { // declare objectValues function in terms of obj
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) { // declare keysToString function in terms of object parameter
-    let storageArr = []; // declare storageArr to store keys' values of object
+    let storageArr = []; // declare storageArr to store objects' keys' values
 
     for (let key in object){ // declare for loop to iterate ver object
-        storageArr.push(key); 
+        storageArr.push(key); // push key into storageArr
     }
 
-    return storageArr.join(" ");
+    return storageArr.join(" "); // return string of joined elements from storageArr
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function valuesToString(object) {
-    let storageArr = [];
+function valuesToString(object) { // declare valuesToString function in terms of object parameter
+    let storageArr = []; // declare storageArr to store object's keys' values
 
-    for (let key in object){
-      if (typeof object[key] === "string")
-        storageArr.push(object[key]);
+    for (let key in object){ // declare for-in loop to iterate over object keys
+      if (typeof object[key] === "string") // declare conditional to evaluate if key's value is a string each iteration
+        storageArr.push(object[key]); // if so, push value into storageArr
       }
 
-    return storageArr.join(" ");
+    return storageArr.join(" "); // return string of elemets joined from storageArr
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function arrayOrObject(collection) {
-    if (Array.isArray(collection)){
-        return 'array';
-    } else if (collection instanceof Object){
-        return 'object';
+function arrayOrObject(collection) { // declare arrayOrObject function in terms of collection parameter
+    if (Array.isArray(collection)){ // declare conditional to evaluate if collection is an array
+        return 'array'; // if so, return 'array'
+    } else if (collection instanceof Object){ // declare else-if conditional to evaluate if collection is an object
+        return 'object'; // if so, return object
     }
 }
 
@@ -56,41 +56,44 @@ function arrayOrObject(collection) {
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function capitalizeWord(string) {
-    let firstLetter = string[0].toUpperCase();
-    let restOfString = string.slice(1, string.length);
-    return firstLetter+restOfString;
+function capitalizeWord(string) { // declare capitalizeWord function in terms of string parameter
+    let firstLetter = string[0].toUpperCase(); // declare firstLetter variable and assign to upper-cased char of string at index 0
+    // declare restOfString variable, assign it to string sliced from index one to string's end
+    let restOfString = string.slice(1, string.length); 
+    return firstLetter+restOfString; // return string concatenated from firstLetter and restOfString
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function capitalizeAllWords(string) {
-    let stringArray = string.split(" ");
-    let storageArray = [];
+function capitalizeAllWords(string) { // declare capitalizeAllWords function in terms of string parameter
+    let stringArray = string.split(" "); // declare stringArray variable, assign to array of elements split from string argument
+    let storageArray = []; // declare storageArray as empty array for storing capitalized words
 
-    for (let i = 0; i <= stringArray.length -1 ; i++){
-        storageArray.push(capitalizeWord(stringArray[i]));
+    for (let i = 0; i <= stringArray.length -1 ; i++){  // declare for loop to iterate over length of stringArray
+        // each iteration, push capitalized word from string array at index i to storageArray
+        storageArray.push(capitalizeWord(stringArray[i])); 
     }
 
-    return storageArray.join(" ");
+    return storageArray.join(" "); // return a space-separated string joined from elements in storageArray
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function welcomeMessage(object) {
-    let capitalizedName = capitalizeWord(object.name);
-    return "Welcome " + capitalizedName + "!";
+function welcomeMessage(object) { // declare welcomeMessage function in terms of object parameter
+    let capitalizedName = capitalizeWord(object.name); // declare capitalizedName variable, assign it to object's name, capitalized
+    return "Welcome " + capitalizedName + "!"; // return string concatenated from strings, capitalizedName
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function profileInfo(object) {
+function profileInfo(object) { // declare profileInfo function in terms of object parameter
+    // return string concatenated from cap'd object's name, string, and cap'd object's species
     return capitalizeWord(object.name) + " is a " + capitalizeWord(object.species);
 }
 
