@@ -43,7 +43,7 @@ _.identity = function(value){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-
+_.typeOf
 
 /** _.first
 * Arguments:
