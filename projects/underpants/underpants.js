@@ -298,7 +298,22 @@ _.reject = function(array, func){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
-
+_.partition = function(array, func){
+    let returnArray = [];
+    let passArray = [];
+    let failArray = [];
+    for (let i = 0; i<=array.length-1; i++){
+        if(func(array[i], i, array)){
+            passArray.push(array[i]);
+        }
+        if(!func(array[i], i, array)){
+            failArray.push(array[i]);
+        }
+    }
+    returnArray.push(passArray);
+    returnArray.push(failArray);
+    return returnArray;
+}
 
 /** _.map
 * Arguments:
@@ -315,7 +330,23 @@ _.reject = function(array, func){
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(collection, func){
+    let returnArray = [];
+    
+    if (_.typeOf(collection) === "array"){
+        for (let i = 0; i <= collection.length-1 ; i++){
+            let newVal = func(collection[i], i, collection);
+            returnArray.push(newVal);
+        }
+    }
+    if (_.typeOf(collection) === "object"){
+        for (let key in collection){
+            let newVal = func(collection[key], key, collection);
+            returnArray.push(newVal);
+        }
+    }
+    return returnArray;
+}
 
 /** _.pluck
 * Arguments:
@@ -327,7 +358,17 @@ _.reject = function(array, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-
+_.pluck = function(array, prop){
+    let newArray = _.map(array, function(object){
+        for (let key in object){
+            if (key === prop){
+                return object[key];
+            }
+        }
+    }
+    )
+    return newArray;
+}
 
 /** _.every
 * Arguments:
@@ -349,7 +390,35 @@ _.reject = function(array, func){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-
+_.every = function(collection, func){
+    if (func === undefined){
+        func = function(val){
+            if (val){
+                return true;
+            }
+            if (!val){
+                return false;
+            }
+        }
+    }
+    
+    if (_.typeOf(collection)==="array"){
+        for (let i = 0; i<=collection.length-1;i++){
+            if (func(collection[i], i, collection)===false){
+                return false;
+            } 
+        }
+        return true;
+    }
+    if (_.typeOf(collection)==="object"){
+        for (let key in collection){
+            if (func(collection[key], key, collection)===false){
+                return false;
+            }     
+        }
+        return true;
+    }
+}
 
 /** _.some
 * Arguments:
