@@ -219,7 +219,18 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-_.
+_.unique = function(arr){
+    let storageArray = [];
+    for (let i = 0 ; i <= arr.length - 1 ; i++){
+        for (let j = 0 ; j <= storageArray.length-1 ; j++){
+            if (arr[i] !== storageArray[j]){
+                storageArray.push()
+            }
+
+        }
+    }
+    return storageArray;
+}
 
 /** _.filter
 * Arguments:
