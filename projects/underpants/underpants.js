@@ -219,15 +219,11 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-_.unique = function(arr){
+_.unique = function(array){
     let storageArray = [];
-    for (let i = 0 ; i <= arr.length - 1 ; i++){
-        for (let j = 0 ; j <= storageArray.length-1 ; j++){
-            if (this.indexOf(storageArray, arr[i])){
-                storageArray.push(arr[i]);
-
-            }
-
+    for (let i = 0 ; i <= array.length - 1 ; i++){
+        if (_.indexOf(storageArray, array[i]) === -1){
+            storageArray.push(array[i]);
         }
     }
     return storageArray;
@@ -534,7 +530,17 @@ _.reduce = function(array, func, seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
+_.extend = function(object1, object2, ...objects){
+    for (let key in object2){
+        object1[key] = object2[key];
+    }
+    for (let i = 0; i<=objects.length-1; i++){
+        for (let key in objects[i]){
+            object1[key] = objects[i][key];
+        }
+    }
+    return object1;
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
