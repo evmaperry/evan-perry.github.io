@@ -117,7 +117,24 @@ _.first = function(arr, num){
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(arr, num){
+    if(this.typeOf(arr) !== "array"){
+        return [];
+    }
+    if (this.typeOf(num) !== "number"){
+        return arr[arr.length-1];
+    }
+    if (num > arr.length){
+        return arr;
+    } 
+    else {
+        let storageArray = [];
+        for (let i = arr.length-1; i >= arr.length - num ; i--){
+            storageArray.unshift(arr[i]);
+        }
+        return storageArray;
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -134,7 +151,14 @@ _.first = function(arr, num){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+_.indexOf = function(arr, value){
+    for ( let i = 0; i <= arr.length - 1; i++){
+        if (arr[i] === value){
+            return i;
+        }
+    }
+    return (-1)
+}
 
 /** _.contains
 * Arguments:
@@ -150,7 +174,14 @@ _.first = function(arr, num){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(arr, value){
+    for ( let i = 0 ; i <= arr.length -1 ; i++){
+        if (arr[i] === value){
+            return true
+        }
+    }
+    return false;
+}
 
 /** _.each
 * Arguments:
@@ -167,7 +198,17 @@ _.first = function(arr, num){
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
-
+_.each = function(collection, func){
+    if (Array.isArray(collection)){
+        for (let i = 0 ; i <= collection.length - 1; i++){
+            func(collection[i], i, collection);
+        }
+    } else {
+        for (let key in collection){
+            func(collection[key], key, collection);
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -178,7 +219,7 @@ _.first = function(arr, num){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+_.
 
 /** _.filter
 * Arguments:
