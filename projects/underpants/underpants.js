@@ -442,27 +442,44 @@ _.every = function(collection, func){
 */
 _.some = function(collection, func){
     if(func === undefined){
-        func = 
+        if(_.typeOf(collection) === "array"){
+            for (let i = 0 ; i<=collection.length-1; i++){
+                if(collection[i]==true){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        if(_.typeOf(collection) === "object"){
+            for (let key in collection){
+                if(collection[key]==true){
+                    return true;
+                }
+            }
+            return false;
+
+        }
     }
     
-    
-    if(_.typeOf(collection) === "array"){
-        for (let i = 0 ; i<=collection.length-1; i++){
-            if(func(collection[i], i, collection)===true){
-                return true;
+    if (_.typeOf(func) === "function"){
+        if(_.typeOf(collection) === "array"){
+            for (let i = 0 ; i<=collection.length-1; i++){
+                if(func(collection[i], i, collection)===true){
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
-    }
 
-    if(_.typeOf(collection) === "object"){
-        for (let key in collection){
-            if(func(collection[key], key, collection)===true){
-                return true;
+        if(_.typeOf(collection) === "object"){
+            for (let key in collection){
+                if(func(collection[key], key, collection)===true){
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
-
     }
 }
 
