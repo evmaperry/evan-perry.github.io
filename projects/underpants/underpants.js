@@ -440,7 +440,31 @@ _.every = function(collection, func){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection, func){
+    if(func === undefined){
+        func = 
+    }
+    
+    
+    if(_.typeOf(collection) === "array"){
+        for (let i = 0 ; i<=collection.length-1; i++){
+            if(func(collection[i], i, collection)===true){
+                return true;
+            }
+        }
+        return false;
+    }
 
+    if(_.typeOf(collection) === "object"){
+        for (let key in collection){
+            if(func(collection[key], key, collection)===true){
+                return true;
+            }
+        }
+        return false;
+
+    }
+}
 
 /** _.reduce
 * Arguments:
