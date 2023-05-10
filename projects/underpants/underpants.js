@@ -375,7 +375,25 @@ _.unique = function(arr){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-
+_.reduce(array, func, seed){
+    let result;
+    // was seed passed
+    if (seed === undefined){ // declare conditional to evaluate if 
+        seed = array[0];
+        for (let i = 1; i<=arra.length-1;i++){
+            result=func(result,array[i], i, array);
+            //             ?    item   index collection
+        }
+    }
+    // else it's
+    else {
+        result = seed;
+        for (let i = 0; i<=array.length-1; i++){
+            result=func(result, array[i], i, array);
+        }
+    }
+    return result;
+}
 
 /** _.extend
 * Arguments:
