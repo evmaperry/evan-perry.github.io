@@ -248,7 +248,15 @@ _.unique = function(arr){
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array, func){
+    let returnArray = []
+    for (let i = 0 ; i<=array.length-1; i++){
+        if(func(array[i], i, array)){
+            returnArray.push(array[i]);
+        }
+    }
+    return returnArray;
+}
 
 /** _.reject
 * Arguments:
@@ -262,7 +270,15 @@ _.unique = function(arr){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+_.reject = function(array, func){
+    let storageArray = [];
+    for (let i = 0; i <= array.length-1; i++){
+        if(!func(array[i], i, array)){
+            storageArray.push(array[i]);
+        }
+    }
+    return storageArray;
+}
 
 /** _.partition
 * Arguments:
@@ -375,21 +391,20 @@ _.unique = function(arr){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-_.reduce(array, func, seed){
+_.reduce = function(array, func, seed){
     let result;
     // was seed passed
     if (seed === undefined){ // declare conditional to evaluate if 
-        seed = array[0];
-        for (let i = 1; i<=arra.length-1;i++){
-            result=func(result,array[i], i, array);
-            //             ?    item   index collection
+        result = array[0];
+        for (let i = 1; i<=array.length-1;i++){
+            result = func(result,array[i], i, array);
         }
     }
     // else it's
     else {
         result = seed;
         for (let i = 0; i<=array.length-1; i++){
-            result=func(result, array[i], i, array);
+            result = func(result, array[i], i, array);
         }
     }
     return result;
