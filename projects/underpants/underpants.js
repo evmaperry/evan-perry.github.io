@@ -43,7 +43,26 @@ _.identity = function(value){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-_.typeOf
+_.typeOf = function(value){
+    switch (true){
+        case (typeof value === "string"):
+            return "string";
+        case (typeof value === "number"):
+            return "number";
+        case (Array.isArray(value)):
+            return "array";
+        case (typeof value === "function"):
+            return "function";   
+        case (value instanceof Object):
+            return "object";
+        case (typeof value === "boolean"):
+            return "boolean";
+        case (typeof value === "undefined"):
+            return "undefined";
+        case (value === null):
+            return "null";
+    }
+}
 
 /** _.first
 * Arguments:
@@ -62,7 +81,24 @@ _.typeOf
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
-
+_.first = function(arr, num){
+    if(!Array.isArray(arr)){
+        return [];
+    }
+    if (this.typeOf(num) !== "number"){
+        return arr[0];
+    } 
+    if (num > arr.length){
+        return arr;
+    }
+    else {
+        let storageArray = [];
+        for (let i = 0 ; i <= num - 1; i++){
+            storageArray.push(arr[i]);
+        }    
+        return storageArray;
+    }
+}
 
 /** _.last
 * Arguments:
