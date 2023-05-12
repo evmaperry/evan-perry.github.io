@@ -530,16 +530,13 @@ _.reduce = function(array, func, seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-_.extend = function(object1, object2, ...objects){
-    for (let key in object2){
-        object1[key] = object2[key];
-    }
+_.extend = function(object, ...objects){
     for (let i = 0; i<=objects.length-1; i++){
         for (let key in objects[i]){
-            object1[key] = objects[i][key];
+            object[key] = objects[i][key];
         }
     }
-    return object1;
+    return object;
 }
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
