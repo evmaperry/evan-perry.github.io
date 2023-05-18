@@ -130,7 +130,7 @@ function deepEqual(x,y) {
     return false;
   }
 
-  let xKeys = Objects.keys(x);
+  let xKeys = Object.keys(x);
   let yKeys = Object.keys(y);
 
   if (xKeys.length !== yKeys.length){
@@ -138,16 +138,12 @@ function deepEqual(x,y) {
   }
 
   for (let i = 0 ; i <= xKeys.length - 1; i++){
-    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i], y[xKeys[i]]])){
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
       return false;
       } 
     }
     return true;
   }
-
-
-
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
