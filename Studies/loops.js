@@ -85,6 +85,3 @@ for (let key in loopyObject){
   console.log(loopyObject[key]);
 } // prints => key1 ... value1 ... key2 ... value2
 
-
- * 
- */
