@@ -17,7 +17,7 @@
  * Loops
  * 
  * 1) Explain while, for, and for-in loops
-Loops repeat a block of code until some condition is met. A While loop runs until a certain condition returns false. In the code below, once count is assigned to 2, the While loop ceases executing. */
+Loops repeat a block of code until some condition is met. A While loop runs until a certain condition returns false. In the code below, once the count varaible is re-assigned to 2, the While loop ceases executing. */
 
 let count = 0;
 
@@ -68,11 +68,11 @@ let loopyArray = ["beep","boop","blam"];
 
 for (let i = 0; i <= loopyArray.length-1; i++){
   console.log(loopyArray[i]);
-} // prints beep ... boop ... blam
+} // prints => beep ... boop ... blam
 
 for (let i = loopyArray.length-1; i >= 0 ; i--){
   console.log(loopyArray[i]);
-} // prints blam ... boop ... beep
+} // prints => blam ... boop ... beep
 
 
 /* 4) Loop over an Object
