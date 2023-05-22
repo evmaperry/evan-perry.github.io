@@ -40,6 +40,3 @@ console.log(myString); // prints => This new string is awesome.
  let loudString = quietString.toUpperCase();
  console.log(loudString); // prints => "DON'T YOU HATE IT WHEN PEOPLE YELL IN TEXT MESSAGES?"
 
-
- * 
- */
