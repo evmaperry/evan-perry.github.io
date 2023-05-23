@@ -17,8 +17,16 @@ function flatten(array) {
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
-
+// declare loop function in terms of value, test function, update function, body function 
+function loop(value, testFunc, updateFunc, bodyFunc) {
+  // declare conditional to evaluate if value passes test func
+  if(testFunc(value)){
+    // if so, execute body function on value
+    bodyFunc(value);
+    // then recurse over loop function, inputting value run through 
+    // updateFunc, then self-same function args
+    return loop(updateFunc(value), testFunc, updateFunc, bodyFunc);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
