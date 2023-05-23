@@ -24,7 +24,7 @@ function loop(value, testFunc, updateFunc, bodyFunc) {
     // if so, execute body function on value
     bodyFunc(value);
     // then recurse over loop function, inputting value run through 
-    // updateFunc, then self-same function args
+    // updateFunc and self-same function args
     return loop(updateFunc(value), testFunc, updateFunc, bodyFunc);
   }
 }
