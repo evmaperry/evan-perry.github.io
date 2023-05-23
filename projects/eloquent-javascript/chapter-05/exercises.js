@@ -33,13 +33,21 @@ function loop(value, testFunc, updateFunc, bodyFunc) {
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
+// declare every function in terms of array, test function parameters
 function every(array, test) {
+  // declare condition to evaluate if array is empty
   if (array.length === 0){
+    // if so, return true -- all array elements have passed test
     return true;
   }
+  // declare condition to evaluate if, each iteration, the 
+  // first element of the array fails the test
   if (test(array[0]) ===  false){
+    // if so, return false
     return false;
   }
+  // return a recursive call on every for next element
+  // in array
   return every(array.slice(1), test)
 }
 
