@@ -1,9 +1,16 @@
 // /////////////////////////////////////////////////////////////////////////////
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
-
-function flatten() {
-
+// declare flatten function in terms of array parameter
+function flatten(array) {
+  // declare flattenedArrays variable and assign it to a reduction over array argument
+  let flattenedArrays = array.reduce((accumulator, current) => {
+    // every iteration, re-assign the accumulator as itself concatted to the current array
+    accumulator = accumulator.concat(current);
+    // return the accumulator for next iteration of reduce method
+    return accumulator;
+  }, [])
+  return flattenedArrays; // return the flattenedArrays array after reduce method executes
 }
 
 // /////////////////////////////////////////////////////////////////////////////
