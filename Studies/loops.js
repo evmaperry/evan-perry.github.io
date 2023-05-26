@@ -87,11 +87,11 @@ let loopyArray = ["beep","boop","blam"];
 
 for (let i = 0; i <= loopyArray.length-1; i++){
   console.log(loopyArray[i]);
-} // prints => beep => boop => blam
+} // prints => beep ... boop ... blam
 
 for (let i = loopyArray.length-1; i >= 0 ; i--){
   console.log(loopyArray[i]);
-} // prints => blam => boop => beep
+} // prints => blam ... boop ... beep
 
 
 /**
