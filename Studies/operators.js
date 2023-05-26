@@ -149,7 +149,7 @@ console.log(!true) // prints => false
 */
 
 let numberType = 12;
-console.log(!(typeof numberType === "string")); // prints => true  
+console.log(!(typeof numberType === "string")); // prints => true 
 
 /** 
  * 
