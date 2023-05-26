@@ -96,7 +96,7 @@ for (let i = loopyArray.length-1; i >= 0 ; i--){
 
 /**
  * 
- * 4) Looping over an Object
+ * 4) Looping over an object
  * 
  * For-in loops are used to access the key-value pairs contained in an object. Object values are accessed 
  * by using bracket notation on the object. In the example below, "key" is a variable that stands in for 

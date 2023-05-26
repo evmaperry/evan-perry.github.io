@@ -25,7 +25,8 @@
  * responsible for processes like assigning variables, combining multiple variables into one, 
  * comparing variables, and defining programmatic logic.  
  *
- * 1) Assignment operators
+ * 1) Assignment Operators
+ * 
  * In order to assign a variable to a value, the assignment operator, =, must be placed between 
  * the variable and the value, like so:  
 */
@@ -55,7 +56,7 @@ console.log(repeatString); // prints => repeatrepeat
 
 /** 
  * 
- * 2) Arithmetic operators
+ * 2) Arithmetic Operators
  * 
  * Arithmetic operators perform mathematical operations on number variables. Many arithmetic operations 
  * can be chained to return a single mathematical value. Operational precedence is set with parentheses, 
@@ -77,7 +78,7 @@ console.log(riseAndFall); // prints => 0
 
 /**  
  * 
- * 3) Comparison operators
+ * 3) Comparison Operators
  * 
  * Evaluations of the equivalence or similarity are performed with comparison operators. Because 
  * these operators compare things, they require two operands to function. 
@@ -105,7 +106,7 @@ console.log("2" !== 2); // prints => true
  
 /** 
  * 
- * 4) Logical operators
+ * 4) Logical Operators
  * 
  * Logical operators help to define boolean expressions. Logical AND, written as &&, and 
  * logical OR, written as ||, both take two operands that resolve to booleans, and then return 
@@ -153,7 +154,7 @@ console.log(!(typeof numberType === "string")); // prints => true
 
 /** 
  * 
- * 6) Ternary operator (a ? b : c)
+ * 6) Ternary Operator (a ? b : c)
  * 
  * The ternary operator performs an if-else logical operation in a single line using ? and :. 
  * Ternary's are written in the form of:
