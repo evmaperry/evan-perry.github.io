@@ -13,11 +13,28 @@
  * 
  * 4) Loop over an Object
  * 
+ *
  * 
- * Loops
+ 
+/**
  * 
- * 1) Explain while, for, and for-in loops
-Loops repeat a block of code until some condition is met. A While loop runs until a certain condition returns false. In the code below, once the count varaible is re-assigned to 2, the While loop ceases executing. */
+ * LOOPS
+ * 
+ * 0) Intro
+ * 
+ * Loops are another tool for manipulating a program's control flow. Loops enable the execution of
+ * code a certain number of times or under certain conditions. The conditions under which a loop
+ * executes may be set dynamically by defining those conditions in terms of variables or their
+ * properties, such as an array's length property. Loops are great for accessing elements in an array
+ * or the key-value pairs of an object.
+ * 
+ * 1) While, For, and For-in loops
+ * 
+ * Loops repeat a block of code until some condition is met. A While loop runs until a certain condition 
+ * returns false. In the code below, once the count variable is re-assigned to 2, the While loop ceases 
+ * executing. 
+ * 
+*/
 
 let count = 0;
 

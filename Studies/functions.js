@@ -4,11 +4,13 @@
  * 
  * 0) Intro
  * 
- * Functions compartmentalize blocks of code; functions may be employed repeatedly and 
+ * Functions compartmentalize blocks of code to be employed repeatedly and 
  * arbitratily at the behest of the programmer. Functions are integral in developing a program's
  * control flow and enable the developer to avoid re-writing the same lines of code throughout a
  * program. The logic inherent to a function is employed by invoking (a.k.a. "calling" or 
- * "executing") the function.  
+ * "executing") the function. Oddly enough, variables assigned to functions are tehcnically
+ * of the object DataType, but when a function is run on the unary typeof operator, the operation
+ * returns "function". 
  * 
  * 1) Two phases of function construction: Declaration and Call/execute
  * 
