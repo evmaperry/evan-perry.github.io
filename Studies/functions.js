@@ -107,8 +107,8 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
  * 
 */
   
-  let returnArg2 = function(arg1, arg2){ // returnArg2 defined to take two arguments, but the
-   return arg2;               // 'return' keyword designates that only arg2 is returned.
+  let returnArg2 = function(arg1, arg2){ // returnArg2 defined to take two arguments, but the...
+   return arg2;                          // ...'return' keyword designates that only arg2 is returned.
   }
   
 /** 

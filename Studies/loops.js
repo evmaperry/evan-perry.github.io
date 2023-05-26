@@ -55,7 +55,7 @@ for (let key in printMyProperties){         // for-in loops iterate over the key
  * 2) Looping forward and backwards, and any number of times
  * 
  * For loops can be defined to increment up or decrement down, and execute as many times as needed
- * according to the assignments of variables inserted into to the loop declarations.
+ * according to the definition of a loop declaration.
  * 
 */
 
@@ -93,7 +93,6 @@ for (let i = 0; i <= loopyArray.length-1; i++){
 for (let i = loopyArray.length-1; i >= 0 ; i--){
   console.log(loopyArray[i]);
 } // prints => blam ... boop ... beep
-
 
 /**
  * 
