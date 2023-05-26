@@ -10,6 +10,7 @@
  * update to the string value. In this way, strings are said to be immutable: their values 
  * don't change, and instead they are created anew.
  * 
+ * 
  * 1) With operators (e.g., + and +=)
  * 
  * The operators + and += enable the concatenation of strings to create new string values. 

@@ -10,6 +10,7 @@
  * properties, such as an array's length property. Loops are great for accessing elements in an array
  * or the key-value pairs of an object.
  * 
+ * 
  * 1) While, For, and For-in loops
  * 
  * Loops repeat a block of code until some condition is met. A While loop runs until a certain condition 

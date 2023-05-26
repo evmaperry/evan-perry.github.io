@@ -9,6 +9,7 @@
  * responsible for processes like assigning variables, combining multiple variables into one, 
  * comparing variables, and defining programmatic logic.  
  *
+ * 
  * 1) Assignment Operators
  * 
  * In order to assign a variable to a value, the assignment operator, =, must be placed between 

@@ -12,6 +12,7 @@
  * of the object DataType, but when a function is run on the unary typeof operator, the operation
  * returns "function". 
  * 
+ * 
  * 1) Two phases of function construction: Declaration and Call/Execute
  * 
  * A function is a discrete block of code that executes when the function is invoked. A function 

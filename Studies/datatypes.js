@@ -11,6 +11,7 @@
  * is not always directly declared, but is often implied by the kinds of characters 
  * used when assigning the variable.    
  * 
+ * 
  * 1) Number
  * 
  * A Number Datatype is initialized when a variable is assigned to only numeric 
