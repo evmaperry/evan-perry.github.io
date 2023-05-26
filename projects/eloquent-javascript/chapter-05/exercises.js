@@ -55,8 +55,23 @@ function every(array, test) {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 // skip this one if needed.
-function dominantDirection() {
+function dominantDirection(text) {
+  let directionCountArray = countBy(text, char => {
+    let script = characterScript(char.codePointAt(0));
+    return script ? script.direction : "none";
+  }).filter(({
+    name
+  }) => name != "none");
 
+  let dominantDir = directionCountArray.reduce((accumulator, current) => {
+    if (current.count > accumulator.count){
+      accumulator = current;
+      return accumulator;
+    }
+    return accumulator;
+  })
+  
+  return dominantDir.name;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
