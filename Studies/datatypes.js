@@ -1,6 +1,6 @@
 /**
  * 
- * DataTypes
+ * DATATYPES
  * 
  * 0) Intro
  * 

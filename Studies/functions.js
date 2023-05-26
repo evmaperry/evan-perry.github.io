@@ -1,31 +1,23 @@
 /**
+ * 
  * FUNCTIONS
  * 
- * 1) Two phases of function construction: declaration and call/execute
+ * 0) Intro
  * 
- * 2) What's the difference between a function's parameters and arguments Passed
- *    to a function
+ * Functions compartmentalize blocks of code; functions may be employed repeatedly and 
+ * arbitratily at the behest of the programmer. Functions are integral in developing a program's
+ * control flow and enable the developer to avoid re-writing the same lines of code throughout a
+ * program. The logic inherent to a function is employed by invoking (a.k.a. "calling" or 
+ * "executing") the function.  
  * 
- * 3) What the syntax for a named function
+ * 1) Two phases of function construction: Declaration and Call/execute
  * 
- * 4) How do we assign a function to a variable
+ * A function is a discrete block of code that executes when the function is invoked. A function 
+ * must first be declared; the function's internal logic must be defined before being executed. 
+ * Once declared, the function is invoked in code by writing the name of the function, followed 
+ * by closed parentheses. Arguments may or may not be included inside the closed parentheses. 
  * 
- * 5) Functions can optionally take inputs, and optionally return a single value.
- *    How do we specify inputs, and how do we specifty outputs.
- * 
- * 6) Scope: functions can see and modify variables in parent or global scopes.
- *    The inverse is NOT true.
- * 
- * 7) Closures: Functions form closures around the data they house.
- *    If an object returned from the Function and is held in memory somewhere
- *    (ie, referenced), that closure stays ALIVE, and data continue to exist
- *    in these closures.
- * 
- * /*
-Functions
-
- * 1) Two phases of function construction: declaration and call/execute
- A function is a discrete block of code that executes when the function is invoked. A function must first be declared; the function's internal logic must be defined before executed. Once declared, the function is invoked in code by writing the name of the function, followed by closed parentheses. Arguments may or may not be included inside the closed parentheses. */
+*/
 
 let imTheFunctionVariable = function(ImTheParameter){ // function declaration
     console.log(ImTheParameter);
@@ -33,44 +25,66 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
   
   imTheFunctionVariable("I'm the argument"); // function invocation; prints => I'm the argument.
   
-   /* 
-   * 2) What's the difference between a function's parameters and arguments passed to a function
-   
-  Parameters serve as variables for the values passed into a function upon invocation. The values passed into a function when invoked are called arguments. Parameters are set in the function declaration, while arguments provide values to the function on invocation. When a parameter is declared, it effectively is declared as an unassigned variable at the top of the function block. The parameter's variable is assigned a value when an argument is provided on invocation. 
-  
-  During a function declaration, a parameter is effectively declared as a hoisted variable in the function block: */
+/** 
+ * 
+ * 2) Parameters vs Arguments
+ * 
+ * Parameters serve as variables for the values passed into a function upon invocation. The 
+ * values passed into a function when invoked are called arguments. Parameters are set in 
+ * the function declaration, while arguments provide values to the function on invocation. 
+ * When a parameter is declared, it is effectively declared as an unassigned variable at the 
+ * top of the function block. The parameter's variable is assigned a value when an argument 
+ * is provided on invocation. 
+ * 
+ * During a function declaration, a parameter is effectively declared as a hoisted variable 
+ * in the function block: 
+*/
   
   let functionNameHere = function(parameter){   // parameter is declared, 
     // let parameter;    <-----------|          //                  
     console.log(parameter)
   }
   
-  /* When invoked with an argument, the parameter variable is assigned the argument's value. The following invocation: */
+/** 
+ * When invoked with an argument, the parameter variable is assigned the argument's value. 
+ * The following invocation... 
+*/
   
   functionNameHere("argument"); // prints => argument
   
-  /* executes the following code block: */
+/**
+ * ...executes the following code block: 
+*/
   
   {
-    let parameter = "argument"; // parameter variable is assigned to "argument"
+    let parameter = "argument"; // under the hood, parameter variable is assigned to "argument"
     console.log(parameter);     // prints => argument
   }
   
-  /*
-  
-   * 3) What the syntax for a named function
-  Named functions are declared by writing first the 'function' keyword, then the name of the function, then the parameters enclosed in closed parentheses, (), and then the functional code block enclosed in curly brackets, {}.
-  
-  */
+/** 
+ * 
+ * 3) Syntax for a named function
+ * 
+ * Named functions are declared by writing first the 'function' keyword, then the name of 
+ * the function, then the parameters enclosed in closed parentheses, (), and then the 
+ * functional code block enclosed in curly brackets, {}.
+ * 
+*/
   
   function name(...params) {
     // code block
   }
   
-   /*
-   * 
-   * 4) How do we assign a function to a variable
-  Functions are values, and a variable can be assigned to a function. This is done can by declaring the variable name, then assigning it to a function value by using first the "function" keyword, then the function's parameters contained in closed parentheses, (), then the function's code block contained in curly brackets, {}. */
+/** 
+ *
+ * 4) Assigning a function to a variable
+ * 
+ * Functions are values, and a variable can be assigned to a function. This is done can by 
+ * declaring the variable name, then assigning it to a function value by using first the 
+ * 'function' keyword, then the function's parameters contained in closed parentheses, (), 
+ * then the function's code block contained in curly brackets, {}. 
+ * 
+*/
   
   let functionVariable = function(params) {  // variable declared and assigned to function
     console.log(params);                     
@@ -78,19 +92,34 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
   let anotherFunctionVariable = functionVariable
   anotherFunctionVariable("another argument"); // prints => another argument
   
-  /*
-   * 5) Functions can optionally take inputs, and optionally return a single value.
-   *    How do we specify inputs, and how do we specify outputs.
-  The values that a functions takes as input are called arguments, and they are supplied at a function's invocation between closed parentheses and, if needed, separated by commas. Some functions don't require arguments to execute, but if a function is designed to do work in terms of input values, then arguments are a must. Function outputs are specified with the 'return' keyword, which indicates what value will come out of the function block. */
+/**
+ * 
+ * 5) Optionally specifying inputs and outputs
+ * 
+ * The values that a functions takes as input are called arguments, and they are provided at a 
+ * function's invocation between closed parentheses and, if needed, separated by commas. 
+ * Some functions don't require arguments to execute, but if a function is designed to do 
+ * work in terms of input values, then arguments are a must. Function outputs are specified 
+ * with the 'return' keyword, which indicates what value will come out of the function block. 
+ * 
+*/
   
   let returnArg2 = function(arg1, arg2){ // returnArg2 defined to take two arguments, but the
    return arg2;               // 'return' keyword designates that only arg2 is returned.
   }
   
-  /*
-   * 6) Scope: functions can see and modify variables in parent or global scopes.
-   *    The inverse is NOT true.
-   Variables declared inside of functions are scoped to the function in which they were declared. In other words, a variable declared in a function cannot be accessed by code outside the function block (unless the variable value is explicitly returned). On the flip side, variables declared outside of a function are accessible to code written inside of a function block. Variables declared with 'let', 'var' and 'const' are all function scoped.  */
+/** 
+ * 
+ * 6) Functions and Scope
+ * 
+ * Variables declared inside of functions are scoped to the function in which they were
+ * declared. In other words, a variable declared in a function cannot be accessed by code 
+ * outside the function block (unless a variable's value is explicitly returned, but even then
+ * the variable itself is not accessed). On the flip side, variables declared outside of 
+ * a function are accessible to code written inside of a function block. Variables declared 
+ * with 'let', 'var' and 'const' are all function scoped.  
+ * 
+*/
   
   let globalVariable = "Come and get me!";
   
@@ -101,19 +130,23 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
   
   logGlobalVariable();                     // prints => Come and get me!
   // console.log(functionScopedVariable);  // would return Reference Error
-  
    
-   /* 
-   * 7) Closures: Functions form closures around the data they house.
-   *    If an object returned from the Function and is held in memory somewhere
-   *    (ie, referenced), that closure stays ALIVE, and data continue to exist
-   *    in these closures.
-   
-  We've seen that variables declared outside of a function are accessible within the function. By the same token, if a function is declared within a function, the nested function has access to variables declared in the parent function. This enables functions to serve as stores for value assignments that a nested function may require for execution. 
-  
-  A closure is a combination of both 1) a nested function that is returned inside the parent function and 2) the parent function's scoped variables. If a variable is assigned to the parent function of a closure, then any variables scoped in the parent function are accessible during execution of the assigned function variable. The variables declared inside the parent function persist in the reference of the assigned function.
-  
-   */ 
+/** 
+ * 
+ * 7) Functions & Closures
+ * 
+ * We've seen that variables declared outside of a function are accessible within the function.
+ * By the same token, if a function is declared and returned within a function, the nested function 
+ * has access to variables declared in the parent function. This enables functions to serve as 
+ * stores for value assignments that a nested function may require for execution. 
+ * 
+ * A 'closure' is a combination of 1) a nested function that is returned inside the parent 
+ * function and, if applicable, 2) the parent function's function-scoped variables. If a variable 
+ * is assigned to the parent function of a closure, then any variables scoped in the parent function 
+ * are accessible to the closure during execution of the assigned function variable. The variables 
+ * declared inside the parent function persist in the reference of the assigned function.
+ * 
+*/ 
   
   // Parent (or outer) function declaration
     function outerMultiplyBy(num1){         
@@ -131,16 +164,11 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
       return innerMultiplyBy;        
     }
   
-  // assigns variable to innerMultiplyBy where multiplier assigned to 5 
+  // assigns variable to innerMultiplyBy closure function where multiplier assigned to 5 
   let multiplyByFive = outerMultiplyBy(5);  
   
-  // assigns variable to innerMultiplyBy where multiplier assigned to 10
+  // assigns variable to innerMultiplyBy closure function where multiplier assigned to 10
   let multiplyByTen = outerMultiplyBy(10); 
   
   console.log(multiplyByFive(5));       // prints => 25
   console.log(multiplyByTen(10));       // prints => 100
-  
- * 
- * 
- * 
- */
