@@ -83,6 +83,7 @@ if (true){                                                 // condition is defin
 /** 
  * 
  * 4) Switch
+ * 
  * 'Switch' statements encapsulate chains of conditional logic statements, but 
  * in a syntactically simpler manner. 'Switch' statements alter control flow 
  * by evaluating expressions on case-by-case bases, rather that on chained conditional 
