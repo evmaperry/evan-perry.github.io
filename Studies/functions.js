@@ -82,14 +82,14 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
  *
  * 4) Assigning a function to a variable
  * 
- * Functions are values, and a variable can be assigned to a function. This is done can by 
- * declaring the variable name, then assigning it to a function value by using first the 
- * 'function' keyword, then the function's parameters contained in closed parentheses, (), 
- * then the function's code block contained in curly brackets, {}. 
+ * Functions are values, and a variable can be assigned to a function expression. 
+ * A function expression is composed first of the 'function' keyword, then the 
+ * function's parameters contained in closed parentheses, (), then the function's 
+ * code block contained in curly brackets, {}. 
  * 
 */
   
-  let functionVariable = function(params) {  // variable declared and assigned to function
+  var functionVariable = function(params) {  // variable declared and assigned to function
     console.log(params);                     
   }
   let anotherFunctionVariable = functionVariable
@@ -120,7 +120,8 @@ let imTheFunctionVariable = function(ImTheParameter){ // function declaration
  * outside the function block (unless a variable's value is explicitly returned, but even then
  * the variable itself is not accessed). On the flip side, variables declared outside of 
  * a function are accessible to code written inside of a function block. Variables declared 
- * with 'let', 'var' and 'const' are all function scoped.  
+ * with 'var' are functioned scoped, while variables declared with let and const are block
+ * scoped (and are therefore function scoped).  
  * 
 */
   
