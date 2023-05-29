@@ -421,7 +421,7 @@ _.every = function(collection, func){
 *   1) A collection
 *   2) A function
 * Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
+*   1) Call <function> for every element of <collection> with the parameters:
 *       if <collection> is an array:
 *        current element, it's index, <collection>
 *       if <collection> is an object:
