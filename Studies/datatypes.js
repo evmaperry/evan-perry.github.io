@@ -17,9 +17,17 @@
  * A Number Datatype is initialized when a variable is assigned to only numeric 
  * characters and accessory characters, like decimal points and "e", which is used
  * for scientific notation. Variables assigned to values like 12, 
- * 1345454.5532352356 or 1.5e10 will be number DataTypes. Number DataTypes 
- * are great for performing mathematical operations. We can use the typeof operator 
- * to log the DataType of a variable assigned to numbers. 
+ * 1345454.5532352356 or 1.5e10 will be number DataTypes. 
+ * 
+ * Numbers are simple DataTypes, meaning they don't contain or store other values.
+ * Numbers are also immutable. This means that once a variable is assigned to a 
+ * number, the value of the assignment cannot be changed in memory; however, a 
+ * number variable can be re-assigned to a new value. Arithmetic operations on numbers 
+ * re-assign a variable to a new number value in memory in virtue of the original assignment
+ * and the arithmetic operation performed. 
+ * 
+ * Number DataTypes are great for performing mathematical operations. We can use the 
+ * typeof operator to log the DataType of a variable assigned to numbers. 
  * 
 */
 
@@ -38,9 +46,14 @@ console.log(thirdNumber); // prints => 15000000012
  *  
  * 2) String
  * 
- * A String DataType is initialized when a sequence of characters is contained 
- * by quotation marks. Single quotes, double quotes and backticks all initialize 
- * strings. Strings are concatenated together using the addition operator +.  
+ * Strings are sequences of characters contained in quotation marks. Single quotes, double 
+ * quotes and backticks all initialize strings. Strings are concatenated together using 
+ * the addition operator +.  
+ * 
+ * Strings are simple DataTypes: they don't contain or store other values.
+ * Strings are also immutable, meaning the value of a string cannot be changed in memory. 
+ * Instead, when a string is operated on, its updated value is saved as a new string 
+ * in memory and the variable is re-assigned to that new value.
  * 
 */
 
@@ -53,6 +66,7 @@ console.log(firstString + " " + secondString + " " + thirdString); // prints => 
 /**
  * 
  * 3) Boolean
+ * 
  * A Boolean DataType is initialized when a variable is assigned to one of two 
  * keywords: true and false. Booleans enable the implementation of conditional 
  * logic: we can test if a condition is true or false and program responses to 
@@ -81,6 +95,8 @@ if (someCondition === true){
  * and index 0 (zero). Elements are added to and accessed from an array with 
  * bracket notation, using the index of the element to locate it within the array.  
  * 
+ * Arrays are complex DataTypes and are mutable (see sections 11 and 12 below).
+ * 
 */
 
 let emptyArray = [];
@@ -96,6 +112,8 @@ console.log(emptyArray[0]); // prints => First element!
  * which may optionally be populated with key-value pairs, which are also known 
  * as 'properties'. An object's properties are manipulated using any combination 
  * of bracket or dot notation.  
+ * 
+ * Objects are complex DataTypes and are mutable (see sections 11 and 12 below).
  * 
 */
 
