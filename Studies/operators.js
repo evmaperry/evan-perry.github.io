@@ -49,20 +49,21 @@ console.log(repeatString); // prints => repeatrepeat
  * 
  * Javascript features the following arithmetic operators that work on operands of the number datatype: 
  * 
- * Binary arithmetic operators
+ * Binary arithmetic operators: these operations work with both variables assigned to numbers (like 
+ * "count") and latin numerals (like 12)
  * 
  *     +   |   addition operator         |  sums two numbers
  *     -   |   subtraction operator      |  deducts the latter number from the former
  *     *   |   multiplication operator   |  multiplies two numbers
  *     /   |   division operator         |  divides the former number by the latter number
- *     %   |   remainder operator        |  returns the remainder of a division operation after the dividend is divided
- *                                       |  evenly by the divisor
+ *     %   |   remainder operator        |  returns the remainder of a division operation after the dividend is evenly
+ *         |                             |  divided by the divisor
  *    **   |   exponential operator      |  multiplies the former number by itself as many times as the latter number
  * 
- * Unary arithmetic operators
+ * Unary arithmetic operators: these operations only work with variables assigned to numbers
  * 
- *    ++   |   increment operator        |  adds 1 to the number
- *    --   |   decrement operator        |  subtracts 1 from the number
+ *    ++   |   increment operator        |  reassigns a variable operand to itself plus 1
+ *    --   |   decrement operator        |  reassigns a variable operand to itself minus 1
  * 
 */ 
 
@@ -71,20 +72,16 @@ let subtractionOp = additionOp - 1;                 // assigns 2 to subtractOp v
 let multiplyOp = additionOp * subtractionOp;        // assigns 6 to multiplyOp variable, as 3 * 2 = 6
 let divisionOp = multiplyOp / additionOp;           // assigns 2 to divisionOp variable, as 6 / 3 = 2
 
-let remainderOp = 14 % 4;                           // assigns 2 to remainderOp variable, as 2 remains after an
+let remainderOp = 14 % 4;                           // assigns 2 to remainderOp variable, as 2 remains after
                                                     // 14 is evenly divided by 4 
-let longEquation = 1 + 1 / 2 * 2 - 1; // assigns longEquation to 1
-console.log(longEquation); // prints => 1
+let exponentOp = remainderOp ** 3;                  // assigns 8 to exponentOp variable, as 2 * 2 * 2 = 8
 
-/**
- * Other arithmetic operators increment or decrement a number variable by one. 
-*/
+// let onePlusOne = 1++;                            // would return a syntax error; will not assign onePlusOne to 2 
+let incrementOp = 1;                                // assigns incrementOp variable to 1
+incrementOp++;                                      // reassigns incrementOp to 2, as 1 + 1 = 2
 
-let riseAndFall = 0;
-riseAndFall++; // Use increment operator to add 1 to riseAndFall
-console.log(riseAndFall); // prints => 1
-riseAndFall--; // Use decrement operator to subtract 1.
-console.log(riseAndFall); // prints => 0
+let decrementOp = 10;                               // assigns decrementOp variable to 10
+decrementOp--;                                      // reassigns decrementOp to 9, as 10 - 1 = 9
 
 /**  
  * 
