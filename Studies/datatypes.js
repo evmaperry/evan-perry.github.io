@@ -21,7 +21,7 @@
  * 
  * Numbers are simple DataTypes, meaning they don't contain or store other values.
  * Numbers are also immutable. This means that once a variable is assigned to a 
- * number, the value of the assignment cannot be changed in memory; however, a 
+ * number, the value of the assignment cannot be directly changed in memory; however, a 
  * number variable can be re-assigned to a new value. Arithmetic operations on numbers 
  * re-assign a variable to a new number value in memory in virtue of the original assignment
  * and the arithmetic operation performed. 
@@ -50,10 +50,10 @@ console.log(thirdNumber); // prints => 15000000012
  * quotes and backticks all initialize strings. Strings are concatenated together using 
  * the addition operator +.  
  * 
- * Strings are simple DataTypes: they don't contain or store other values.
- * Strings are also immutable, meaning the value of a string cannot be changed in memory. 
- * Instead, when a string is operated on, its updated value is saved as a new string 
- * in memory and the variable is re-assigned to that new value.
+ * Strings are simple DataTypes: they don't contain or store other values. Strings are also 
+ * immutable, meaning the value of a string cannot be directly changed in memory. 
+ * Instead, when a string is operated on and updated, its updated value is saved as a new string 
+ * in memory, and the variable is re-assigned to that new value.
  * 
 */
 
