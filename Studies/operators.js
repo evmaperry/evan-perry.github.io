@@ -43,11 +43,36 @@ console.log(repeatString); // prints => repeatrepeat
  * 
  * 2) Arithmetic Operators
  * 
- * Arithmetic operators perform mathematical operations on number variables. Many arithmetic operations 
+ * Arithmetic operators perform mathematical operations on number variables. Multiple arithmetic operations 
  * can be chained to return a single mathematical value. Operational precedence is set with parentheses, 
  * ()'s. 
-*/
+ * 
+ * Javascript features the following arithmetic operators that work on operands of the number datatype: 
+ * 
+ * Binary arithmetic operators
+ * 
+ *     +   |   addition operator         |  sums two numbers
+ *     -   |   subtraction operator      |  deducts the latter number from the former
+ *     *   |   multiplication operator   |  multiplies two numbers
+ *     /   |   division operator         |  divides the former number by the latter number
+ *     %   |   remainder operator        |  returns the remainder of a division operation after the dividend is divided
+ *                                       |  evenly by the divisor
+ *    **   |   exponential operator      |  multiplies the former number by itself as many times as the latter number
+ * 
+ * Unary arithmetic operators
+ * 
+ *    ++   |   increment operator        |  adds 1 to the number
+ *    --   |   decrement operator        |  subtracts 1 from the number
+ * 
+*/ 
 
+let additionOp = 1 + 2;                             // assigns 3 to addOp variable, as 1 + 2 = 3
+let subtractionOp = additionOp - 1;                 // assigns 2 to subtractOp variable, as 3 - 1 = 2 
+let multiplyOp = additionOp * subtractionOp;        // assigns 6 to multiplyOp variable, as 3 * 2 = 6
+let divisionOp = multiplyOp / additionOp;           // assigns 2 to divisionOp variable, as 6 / 3 = 2
+
+let remainderOp = 14 % 4;                           // assigns 2 to remainderOp variable, as 2 remains after an
+                                                    // 14 is evenly divided by 4 
 let longEquation = 1 + 1 / 2 * 2 - 1; // assigns longEquation to 1
 console.log(longEquation); // prints => 1
 
